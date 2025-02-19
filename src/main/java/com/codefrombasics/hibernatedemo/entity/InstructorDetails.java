@@ -17,7 +17,7 @@ public class InstructorDetails {
     @Column(name="hobby")
     private String hobby;
 
-    @OneToOne(mappedBy = "instructorDetails",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.MERGE,CascadeType.PERSIST})
+    @OneToOne(mappedBy = "instructorDetails",cascade = {CascadeType.DETACH,CascadeType.REFRESH,CascadeType.MERGE,CascadeType.PERSIST})
     private Instructor instructor;
 
     public Instructor getInstructor() {
