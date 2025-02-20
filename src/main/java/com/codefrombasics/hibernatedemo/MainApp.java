@@ -29,10 +29,28 @@ public class MainApp {
 //			findCoursesForInstructor(appDao);
 //			findCoursesForInstructorUsingJoinFetch(appDao);
 //			updateInstructorLastName(appDao);
-			updateCourseTitle(appDao);
-
+//			updateCourseTitle(appDao);
+//			deleteInstructor(appDao);
+//          deleteCourse(appDao);
 		};
 	}
+
+	private void deleteCourse(AppDao appDao) {
+		int id=11;
+		appDao.deleteCourseById(id);
+		System.out.println("Course with Id "+id+" has been deleted");
+
+	}
+
+	private void deleteInstructor(AppDao appDao) {
+		int theId = 1;
+		System.out.println("Deleting instructor id: " + theId);
+
+		appDao.deleteInstructoryById(theId);
+
+		System.out.println("Instructor Deleted!");
+	}
+
 
 	private void updateCourseTitle(AppDao appDao) {
 		int id=10;
