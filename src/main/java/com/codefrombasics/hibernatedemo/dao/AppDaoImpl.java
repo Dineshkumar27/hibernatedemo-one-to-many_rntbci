@@ -59,6 +59,7 @@ public class AppDaoImpl implements AppDao{
     public List<Course> findCoursesForInstructor(int id) {
 
        TypedQuery<Course> query= entityManager.createQuery(
+               //Course in the query is an Entity class name instructor variable name of class Course
                  "from Course where instructor.id=:data", Course.class);
        query.setParameter("data",id);
        List<Course> coursesList=query.getResultList();
@@ -76,5 +77,21 @@ public class AppDaoImpl implements AppDao{
                    query.setParameter("data",id);
              Instructor instructor=query.getSingleResult();
              return  instructor;
+    }
+
+    @Override
+    @Transactional
+    public void updateInstructorLastName(int id) {
+      Instructor instructor=  entityManager.find(Instructor.class,id);
+      instructor.setLastName("Baskar");
+      entityManager.merge(instructor);
+    }
+
+    @Override
+    @Transactional
+    public void updateCourseTitle(int id) {
+       Course course=entityManager.find(Course.class,id);
+       course.setTitle("Data Science");
+       entityManager.merge(course);
     }
 }

@@ -27,8 +27,24 @@ public class MainApp {
 //			createInstructorWithCourses(appDao);
 //			findInstructorWithCourses(appDao);
 //			findCoursesForInstructor(appDao);
-			findCoursesForInstructorUsingJoinFetch(appDao);
+//			findCoursesForInstructorUsingJoinFetch(appDao);
+//			updateInstructorLastName(appDao);
+			updateCourseTitle(appDao);
+
 		};
+	}
+
+	private void updateCourseTitle(AppDao appDao) {
+		int id=10;
+		appDao.updateCourseTitle(10);
+		System.out.println("Updated Course id "+id);
+	}
+
+	private void updateInstructorLastName(AppDao appDao) {
+		int id=1;
+		appDao.updateInstructorLastName(id);
+
+
 	}
 
 	private void findCoursesForInstructorUsingJoinFetch(AppDao appDao) {
